@@ -29,12 +29,10 @@ function App() {
   };
 
   useEffect(() => {
-    const storedTodos = localStorage.getItem("todos");
-    if (storedTodos) {
-      const todos = JSON.parse(storedTodos);
-      if (todos && todos.length > 0) {
-        setTodos(todos);
-      }
+    const todos = JSON.parse(localStorage.getItem("todos"))
+
+    if (todos && todos.length > 0) {
+      setTodos(todos)
     }
   }, [])
 
